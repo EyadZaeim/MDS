@@ -34,7 +34,7 @@ def get_http_client():
         scopes for authorization, and caches API tokens in TOKEN_STORE_FILE.
     """
     store = file.Storage(TOKEN_STORE_FILE)
-    creds = store.get()
+    creds = none
     if not creds or creds.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_ID_FILE, SCOPES)
         creds = tools.run_flow(flow, store)
